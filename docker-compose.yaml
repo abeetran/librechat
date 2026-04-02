@@ -1,0 +1,46 @@
+version: "3.8"
+
+services:
+  mongo:
+    image: mongo:6
+    container_name: librechat-mongo
+    volumes:
+      - mongo_data:/data/db
+
+  librechat:
+    image: ghcr.io/danny-avila/librechat:latest
+    container_name: librechat
+    ports:
+      - "3080:3080"
+    depends_on:
+      - mongo
+    environment:
+      - HOST=0.0.0.0
+      - PORT=3080
+
+      # database
+      - MONGO_URI=mongodb://mongo:27017/librechat
+
+      # security
+      - JWT_SECRET=9kF3xP7vQ2LmR8sT5uY1wZ6A0bC4dE9H
+      - JWT_REFRESH_SECRET=8kF3xP7vQ2LmR8sT5uY1wZ6A0bC4dE8H
+
+      # OpenAI
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      #gemini
+      # - GOOGLE_API_KEY=${GOOGLE_API_KEY}
+      #claude
+      # - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+
+      # 👇 QUAN TRỌNG: không cần login
+      - ALLOW_ANONYMOUS_USER=true
+      - ALLOW_REGISTRATION=false
+      - ALLOW_SOCIAL_LOGIN=false
+      - ALLOW_REGISTRATION=true
+
+    # ❌ BỎ YAML đi để tránh lỗi
+    # volumes:
+    #   - ./librechat.yaml:/app/librechat.yaml
+
+volumes:
+  mongo_data:

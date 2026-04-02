@@ -36,7 +36,7 @@ services:
       - ALLOW_ANONYMOUS_USER=true
       - ALLOW_REGISTRATION=false
       - ALLOW_SOCIAL_LOGIN=false
-      - ALLOW_REGISTRATION=true
+      - ALLOW_REGISTRATION=false
 
     # ❌ BỎ YAML đi để tránh lỗi
     # volumes:

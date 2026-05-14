@@ -1,0 +1,7 @@
+{
+  "mcpServers": {
+    "xf_mcp": {
+      "url": "https://base-odoo.zent.work/mcp"
+    }
+  }
+}

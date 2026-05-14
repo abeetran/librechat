@@ -16,7 +16,7 @@ services:
       - mongo
     volumes:
       - './librechat.yaml:/app/librechat.yaml'
-      - './mcp-settings.json:/app/mcp-settings.json'
+      # - './mcp-settings.json:/app/mcp-settings.json'
     environment:
       - HOST=0.0.0.0
       - PORT=3080

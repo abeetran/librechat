@@ -15,3 +15,10 @@ endpoints:
   anthropic:
     models:
       default: ["claude-3-sonnet", "claude-3-haiku"]
+
+mcpServers:
+  base_odoo:
+    type: sse
+    url: https://base-odoo.zent.work/mcp
+    headers:
+      Authorization: Bearer 63f4727c0da8b0ca14f213f9e381de522327dc23

@@ -16,7 +16,7 @@ endpoints:
     models:
       default: ["claude-3-sonnet", "claude-3-haiku"]
 
-mcpservers:
+mcpServers:
   base_odoo:
     type: sse
     url: https://base-odoo.zent.work/mcp

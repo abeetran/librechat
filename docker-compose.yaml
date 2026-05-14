@@ -15,7 +15,7 @@ services:
     depends_on:
       - mongo
     volumes:
-      - './librechat.yaml:/app/librechat.yaml'
+      - '/root/librechat/librechat.yaml:/app/librechat.yaml'
       # - './mcp-settings.json:/app/mcp-settings.json'
     environment:
       - HOST=0.0.0.0

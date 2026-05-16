@@ -19,7 +19,7 @@ endpoints:
 mcpServers:
   useExternal: true
   base_odoo:
-    type: sse
+    type: streamable-http
     url: https://base-odoo.zent.work/mcp
     headers:
       Authorization: Bearer 63f4727c0da8b0ca14f213f9e381de522327dc23
